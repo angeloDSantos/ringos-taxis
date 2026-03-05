@@ -41,8 +41,8 @@ const benefits = [
 
 const AirportTrips = () => {
     usePageSEO({
-        title: "Airport Transfers | Ringo's Taxis",
-        description: "Reliable, stress-free airport taxi transfers from Ringwood, Bournemouth & South UK to all major airports.",
+        title: "Bournemouth Airport Taxi | Heathrow & Gatwick Transfers | Ringo's Taxis",
+        description: "Best Bournemouth airport taxi service. We provide fixed-price airport transfers from Ringwood, Bournemouth, and Christchurch to all major UK airports.",
     });
 
     return (
@@ -66,16 +66,14 @@ const AirportTrips = () => {
                         {/* Content */}
                         <div>
                             <span className="inline-block font-heading text-[10px] sm:text-xs tracking-[0.3em] uppercase text-yp-gold font-bold mb-2 sm:mb-3">
-                                Airport Transfers
+                                Bournemouth Airport Taxis
                             </span>
-                            <h2 className="font-display text-2xl sm:text-3xl font-bold text-yp-dark mb-4 sm:mb-6">
-                                Fly Stress-Free with<br />
-                                <span className="text-yp-gold">Ringo's Airport Transfers</span>
-                            </h2>
+                            <h1 className="font-display text-2xl sm:text-3xl font-bold text-yp-dark mb-4 sm:mb-6">
+                                Reliable <span className="text-yp-gold">Airport Taxi</span> Transfers<br />
+                                From Ringwood & South UK
+                            </h1>
                             <p className="text-sm sm:text-base text-yp-dark/70 leading-relaxed mb-6">
-                                Whether it's a 5am flight or a midnight landing, Ringo's Taxis gets you there
-                                on time — every time. We monitor your flight, so if there's a delay, we adjust.
-                                Fixed prices, no meter surprises, and a comfortable ride door-to-door.
+                                Whether it's a 5am flight from Bournemouth Airport or a midnight landing at Heathrow, our Ringwood taxi service gets you there on time — every time. We monitor your flight, so if there's a delay, we adjust. Fixed prices, no meter surprises, and a comfortable ride door-to-door.
                             </p>
                             <a
                                 href="tel:07387777202"

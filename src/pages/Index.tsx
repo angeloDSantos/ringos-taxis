@@ -190,8 +190,8 @@ const CallToAction = () => (
 
 const Index = () => {
   usePageSEO({
-    title: "Ringo's Taxis | Ringwood, Bournemouth & South UK Taxi Service",
-    description: "Ringo's Taxis – reliable taxi service in Ringwood, Bournemouth, Christchurch & South UK. Wheelchair accessible vehicles, airport transfers, and 24/7 availability. Call 07387 777202.",
+    title: "Ringwood Taxi & Bournemouth Airport Transfers | Ringo's Taxis",
+    description: "Looking for a Ringwood taxi or Bournemouth taxi? Ringo's Taxis offers reliable local rides, airport transfers, and disabled access vehicles. 24/7 service.",
   });
 
   return (

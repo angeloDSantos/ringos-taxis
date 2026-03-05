@@ -21,14 +21,14 @@ const serviceAreas = [
 
 const ServiceAreas = () => {
     usePageSEO({
-        title: "Service Areas | Ringo's Taxis",
-        description: "Covering Ringwood, Bournemouth, Christchurch, and all surrounding areas in South UK.",
+        title: "Ringwood Taxi | Bournemouth Taxi | Christchurch Cabs | Ringo's Taxis",
+        description: "Need a Ringwood Taxi or Bournemouth Taxi? We cover Ringwood, Bournemouth, Christchurch, Furlong, and all surrounding areas. Reliable 24/7 service.",
     });
 
     return (
         <YellowPagesLayout
             title="Service Areas"
-            description="Covering Ringwood, Bournemouth, Christchurch, and all surrounding areas in South UK."
+            description="Our trusted local taxi service covers Ringwood, Bournemouth, Christchurch, and all surrounding areas in South UK."
         >
             {/* Map section */}
             <section className="bg-white">
