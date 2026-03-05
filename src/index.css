@@ -1,0 +1,206 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Montserrat:wght@400;500;600;700;800;900&family=Open+Sans:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 0 0% 13%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 13%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 13%;
+
+    --primary: 48 100% 50%;
+    --primary-foreground: 0 0% 13%;
+
+    --secondary: 0 0% 96%;
+    --secondary-foreground: 0 0% 13%;
+
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 45%;
+
+    --accent: 48 100% 50%;
+    --accent-foreground: 0 0% 13%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 0 0% 85%;
+    --input: 0 0% 85%;
+    --ring: 48 100% 50%;
+
+    --radius: 0rem;
+
+    /* Yellow Pages palette */
+    --yp-yellow: 48 100% 54%;
+    --yp-gold: 43 76% 52%;
+    --yp-cream: 48 100% 93%;
+    --yp-paper: 45 50% 94%;
+    --yp-dark: 0 0% 10%;
+    --yp-border: 43 50% 55%;
+    --yp-red: 0 75% 45%;
+    --yp-green: 152 60% 20%;
+
+    --taxi-yellow: 48 100% 50%;
+    --taxi-dark: 0 0% 13%;
+    --taxi-gray: 0 0% 45%;
+    --taxi-light-gray: 0 0% 96%;
+    --taxi-white: 0 0% 100%;
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: 'Open Sans', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
+  }
+}
+
+@layer utilities {
+  /* Yellow Pages newspaper texture */
+  .yp-paper-bg {
+    background-color: hsl(var(--yp-cream));
+    background-image:
+      repeating-linear-gradient(
+        0deg,
+        transparent,
+        transparent 28px,
+        rgba(0,0,0,0.03) 28px,
+        rgba(0,0,0,0.03) 29px
+      );
+  }
+
+  .yp-paper-texture {
+    background-color: hsl(var(--yp-paper));
+    background-image:
+      url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100' height='100' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  }
+
+  /* Classified ad border styles */
+  .yp-border-thick {
+    border: 3px solid hsl(var(--yp-dark));
+  }
+
+  .yp-border-double {
+    border: 4px double hsl(var(--yp-dark));
+  }
+
+  .yp-border-dashed {
+    border: 2px dashed hsl(var(--yp-border));
+  }
+
+  /* Newspaper column rule */
+  .yp-column-rule {
+    column-rule: 1px solid hsl(var(--yp-border));
+  }
+
+  /* Serif display font */
+  .font-display {
+    font-family: 'Playfair Display', serif;
+  }
+
+  .font-heading {
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  /* Phone number banner style */
+  .phone-banner {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    letter-spacing: 0.15em;
+    text-shadow: 1px 1px 0 rgba(0,0,0,0.1);
+  }
+}
+
+/* Page fold effect */
+.page-fold {
+  position: relative;
+}
+
+.page-fold::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 0 80px 80px;
+  border-color: transparent transparent hsl(var(--yp-cream)) transparent;
+  box-shadow: -3px -3px 5px rgba(0,0,0,0.1);
+  transition: border-width 0.3s ease;
+  z-index: 10;
+}
+
+.page-fold::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(
+    135deg,
+    transparent 50%,
+    rgba(0,0,0,0.06) 50%,
+    rgba(0,0,0,0.02) 100%
+  );
+  z-index: 9;
+}
+
+.page-fold:hover::after {
+  border-width: 0 0 120px 120px;
+}
+
+.page-fold:hover::before {
+  width: 120px;
+  height: 120px;
+}
+
+/* Smooth page transitions */
+.page-enter {
+  animation: pageSlideIn 0.4s ease-out;
+}
+
+@keyframes pageSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Newspaper ad box animation */
+@keyframes adPulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(255, 215, 0, 0.4); }
+  50% { box-shadow: 0 0 0 6px rgba(255, 215, 0, 0); }
+}
+
+.yp-ad-pulse {
+  animation: adPulse 2s ease-in-out infinite;
+}
